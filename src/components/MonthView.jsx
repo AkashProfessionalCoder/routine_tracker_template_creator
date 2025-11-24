@@ -6,9 +6,8 @@ import ProfileSection from './ProfileSection';
 const ROUTINE_ITEMS = [
     { id: 'wakeUp', label: 'Wake up before 6:00 AM' },
     { id: 'brush', label: 'Brush' },
-    { id: 'exercise', label: 'Exercise' },
+    { id: 'exercise', label: 'Exercise 1 Hour' },
     { id: 'meditation', label: 'Meditation 10 mins' },
-    { id: 'water', label: 'Drink 3L water' },
     { id: 'news', label: 'Checks today international news' },
     { id: 'learning', label: 'a Tech learning' },
     { id: 'reading', label: 'Read 10 pages' },
@@ -17,6 +16,7 @@ const ROUTINE_ITEMS = [
     { id: 'noDrugs', label: 'No drugs' },
     { id: 'noPorn', label: 'No porn' },
     { id: 'noProcessedFood', label: 'No processed food' },
+    { id: 'noSpending', label: 'No unnecessary spending' },
     { id: 'noNetflix', label: 'No Netflix' },
     { id: 'screenTime', label: 'Mobile screen time < 3 hrs' },
     { id: 'brushBed', label: 'Brush before bed' },
