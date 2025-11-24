@@ -152,24 +152,24 @@ const SettingsPage = ({ routineItems, onAdd, onEdit, onDelete, onReorder }) => {
     };
 
     return (
-        <div className="max-w-4xl mx-auto px-4 py-8">
-            <h1 className="text-3xl font-bold text-gray-800 mb-8">Settings</h1>
+        <div className="max-w-4xl mx-auto px-4 py-6 sm:py-8">
+            <h1 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-6 sm:mb-8">Settings</h1>
 
             {/* Add New Item Section */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200 mb-6">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">Add New Routine Item</h2>
-                <div className="flex gap-3">
+            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-200 mb-4 sm:mb-6">
+                <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4">Add New Routine Item</h2>
+                <div className="flex flex-col sm:flex-row gap-3">
                     <input
                         type="text"
                         value={newItemLabel}
                         onChange={(e) => setNewItemLabel(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleAddItem()}
                         placeholder="Enter routine item name..."
-                        className="flex-1 px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all"
+                        className="flex-1 px-3 sm:px-4 py-2 rounded-lg border border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition-all text-sm sm:text-base"
                     />
                     <button
                         onClick={handleAddItem}
-                        className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-lg transition-colors font-medium"
+                        className="flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 sm:px-6 py-2 rounded-lg transition-colors font-medium text-sm sm:text-base"
                     >
                         <Plus size={18} />
                         Add
@@ -178,11 +178,11 @@ const SettingsPage = ({ routineItems, onAdd, onEdit, onDelete, onReorder }) => {
             </div>
 
             {/* Routine Items List */}
-            <div className="bg-white p-6 rounded-xl shadow-sm border border-gray-200">
-                <h2 className="text-xl font-semibold text-gray-800 mb-4">
+            <div className="bg-white p-4 sm:p-6 rounded-xl shadow-sm border border-gray-200">
+                <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-3 sm:mb-4">
                     Routine Items ({routineItems.length})
                 </h2>
-                <p className="text-sm text-gray-600 mb-4">
+                <p className="text-xs sm:text-sm text-gray-600 mb-3 sm:mb-4">
                     💡 Drag and drop items to reorder them
                 </p>
                 <DndContext

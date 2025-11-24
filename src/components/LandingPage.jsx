@@ -29,20 +29,20 @@ const LandingPage = () => {
             </div>
 
             {/* Main Content */}
-            <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 py-20">
+            <div className="relative z-10 min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 py-12 sm:py-20">
                 {/* Hero Section */}
                 <div
                     className="text-center max-w-4xl mx-auto"
                     style={{ transform: `translateY(${scrollY * 0.2}px)` }}
                 >
                     {/* Badge */}
-                    <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg mb-8 border border-gray-200">
-                        <Sparkles size={16} className="text-yellow-500" />
-                        <span className="text-sm font-medium text-gray-700">Built with Antigravity AI</span>
+                    <div className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-3 sm:px-4 py-2 rounded-full shadow-lg mb-6 sm:mb-8 border border-gray-200">
+                        <Sparkles size={14} className="sm:w-4 sm:h-4 text-yellow-500" />
+                        <span className="text-xs sm:text-sm font-medium text-gray-700">Built with Antigravity AI</span>
                     </div>
 
                     {/* Title */}
-                    <h1 className="text-6xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight">
+                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-4 sm:mb-6 leading-tight px-2">
                         Routine Tracker
                         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
                             Template Creator
@@ -50,39 +50,39 @@ const LandingPage = () => {
                     </h1>
 
                     {/* Description */}
-                    <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-2xl mx-auto">
+                    <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-2xl mx-auto px-4">
                         Track your daily habits, visualize your progress, and build better routines with a customizable tracker designed just for you.
                     </p>
 
                     {/* Stats */}
-                    <div className="flex flex-wrap justify-center gap-8 mb-12">
+                    <div className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12">
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-blue-600">17+</div>
-                            <div className="text-sm text-gray-600">Default Habits</div>
+                            <div className="text-2xl sm:text-3xl font-bold text-blue-600">17+</div>
+                            <div className="text-xs sm:text-sm text-gray-600">Default Habits</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-purple-600">∞</div>
-                            <div className="text-sm text-gray-600">Custom Items</div>
+                            <div className="text-2xl sm:text-3xl font-bold text-purple-600">∞</div>
+                            <div className="text-xs sm:text-sm text-gray-600">Custom Items</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-3xl font-bold text-pink-600">~2.5h</div>
-                            <div className="text-sm text-gray-600">Total Dev Time</div>
+                            <div className="text-2xl sm:text-3xl font-bold text-pink-600">~2.5h</div>
+                            <div className="text-xs sm:text-sm text-gray-600">Total Dev Time</div>
                         </div>
                     </div>
 
                     {/* CTA Button */}
                     <button
                         onClick={() => navigate('/tracker')}
-                        className="group inline-flex items-center gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-8 py-4 rounded-full text-lg font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
+                        className="group inline-flex items-center gap-2 sm:gap-3 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300"
                     >
                         Get Started
-                        <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+                        <ArrowRight size={18} className="sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                     </button>
                 </div>
 
                 {/* Features Grid */}
                 <div
-                    className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto mt-20"
+                    className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 max-w-6xl mx-auto mt-12 sm:mt-16 md:mt-20 px-4"
                     style={{ transform: `translateY(${scrollY * 0.1}px)` }}
                 >
                     {[

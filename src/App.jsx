@@ -59,12 +59,14 @@ function App() {
             </div>
 
             <div id="graph-content" className="bg-gray-50 min-h-screen pb-10 pt-8">
-              <div className="max-w-7xl mx-auto px-4">
-                <ProgressGraph
-                  currentMonth={currentMonth}
-                  data={monthData}
-                  routineItems={routineItems}
-                />
+              <div className="max-w-7xl mx-auto px-4 overflow-x-auto">
+                <div className="min-w-[600px]">
+                  <ProgressGraph
+                    currentMonth={currentMonth}
+                    data={monthData}
+                    routineItems={routineItems}
+                  />
+                </div>
               </div>
             </div>
           </Layout>
