@@ -3,27 +3,7 @@ import { getDaysInMonth, format } from 'date-fns';
 import { Check } from 'lucide-react';
 import ProfileSection from './ProfileSection';
 
-const ROUTINE_ITEMS = [
-    { id: 'wakeUp', label: 'Wake up before 6:00 AM' },
-    { id: 'brush', label: 'Brush' },
-    { id: 'exercise', label: 'Exercise 1 Hour' },
-    { id: 'meditation', label: 'Meditation 10 mins' },
-    { id: 'news', label: 'Checks today international news' },
-    { id: 'learning', label: 'a Tech learning' },
-    { id: 'reading', label: 'Read 10 pages' },
-    { id: 'family', label: 'Call parents/family' },
-    { id: 'goodThing', label: 'Did one good thing' },
-    { id: 'noDrugs', label: 'No drugs' },
-    { id: 'noPorn', label: 'No porn' },
-    { id: 'noProcessedFood', label: 'No processed food' },
-    { id: 'noSpending', label: 'No unnecessary spending' },
-    { id: 'noNetflix', label: 'No Netflix' },
-    { id: 'screenTime', label: 'Mobile screen time < 3 hrs' },
-    { id: 'brushBed', label: 'Brush before bed' },
-    { id: 'sleep', label: 'Sleep before 11:00 PM' },
-];
-
-const MonthView = ({ currentMonth, data, onUpdateProfile, onUpdateDay }) => {
+const MonthView = ({ currentMonth, data, routineItems, onUpdateProfile, onUpdateDay }) => {
     const daysInMonth = getDaysInMonth(currentMonth);
     const monthKey = format(currentMonth, 'yyyy-MM');
     const monthData = data;
@@ -58,7 +38,7 @@ const MonthView = ({ currentMonth, data, onUpdateProfile, onUpdateDay }) => {
                             </tr>
                         </thead>
                         <tbody className="divide-y divide-gray-100">
-                            {ROUTINE_ITEMS.map((item) => (
+                            {routineItems.map((item) => (
                                 <tr key={item.id} className="hover:bg-gray-50/50 transition-colors">
                                     <td className="py-3 px-4 font-medium text-gray-800 sticky left-0 bg-white z-10 border-r border-gray-200 shadow-[2px_0_5px_-2px_rgba(0,0,0,0.05)]">
                                         {item.label}

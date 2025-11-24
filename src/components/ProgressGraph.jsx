@@ -2,13 +2,7 @@ import React from 'react';
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { getDaysInMonth } from 'date-fns';
 
-const ROUTINE_ITEMS = [
-    'wakeUp', 'brush', 'exercise', 'meditation', 'news',
-    'learning', 'reading', 'family', 'goodThing', 'noDrugs', 'noPorn',
-    'noProcessedFood', 'noSpending', 'noNetflix', 'screenTime', 'brushBed', 'sleep'
-];
-
-const ProgressGraph = ({ currentMonth, data }) => {
+const ProgressGraph = ({ currentMonth, data, routineItems }) => {
     const daysInMonth = getDaysInMonth(currentMonth);
     const monthData = data;
 
@@ -17,7 +11,7 @@ const ProgressGraph = ({ currentMonth, data }) => {
         const day = i + 1;
         const dayData = monthData?.days?.[day] || {};
 
-        const completedCount = ROUTINE_ITEMS.filter(itemId => dayData[itemId]).length;
+        const completedCount = routineItems.filter(item => dayData[item.id]).length;
 
         return {
             day,
@@ -38,13 +32,13 @@ const ProgressGraph = ({ currentMonth, data }) => {
                     />
                     <YAxis
                         label={{ value: 'Items Completed', angle: -90, position: 'insideLeft' }}
-                        domain={[0, ROUTINE_ITEMS.length]}
+                        domain={[0, routineItems.length]}
                         stroke="#6b7280"
                     />
                     <Tooltip
                         contentStyle={{ backgroundColor: '#fff', border: '1px solid #e5e7eb', borderRadius: '8px' }}
                         labelFormatter={(value) => `Day ${value}`}
-                        formatter={(value) => [`${value} / ${ROUTINE_ITEMS.length}`, 'Completed']}
+                        formatter={(value) => [`${value} / ${routineItems.length}`, 'Completed']}
                     />
                     <Legend />
                     <Line
@@ -63,19 +57,19 @@ const ProgressGraph = ({ currentMonth, data }) => {
                 <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-600">Average</p>
                     <p className="text-2xl font-bold text-gray-800">
-                        {(chartData.reduce((sum, d) => sum + d.completed, 0) / chartData.length).toFixed(1)} / {ROUTINE_ITEMS.length}
+                        {(chartData.reduce((sum, d) => sum + d.completed, 0) / chartData.length).toFixed(1)} / {routineItems.length}
                     </p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-600">Best Day</p>
                     <p className="text-2xl font-bold text-green-600">
-                        {Math.max(...chartData.map(d => d.completed))} / {ROUTINE_ITEMS.length}
+                        {Math.max(...chartData.map(d => d.completed))} / {routineItems.length}
                     </p>
                 </div>
                 <div className="bg-gray-50 p-4 rounded-lg">
                     <p className="text-sm text-gray-600">Total Items</p>
                     <p className="text-2xl font-bold text-blue-600">
-                        {ROUTINE_ITEMS.length}
+                        {routineItems.length}
                     </p>
                 </div>
             </div>
